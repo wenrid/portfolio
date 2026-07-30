@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Polices auto-hébergées (fontsource) */
+  --font-inter: "Inter Variable", system-ui, sans-serif;
+  --font-manrope: "Manrope Variable", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+
+  --bg: #ffffff;
+  --bg-subtle: #f7f9fc;
+  --surface: #ffffff;
+  --surface-2: #edf1f7;
+  --border: #e2e8f2;
+  --text: #0a0e1a;
+  --text-muted: #5a6478;
+  --accent: #2a5fe0;
+  --accent-soft: rgba(42, 95, 224, 0.08);
+  --grid-line: rgba(10, 14, 26, 0.04);
+}
+
+.dark {
+  --bg: #0a0e1a;
+  --bg-subtle: #070b16;
+  --surface: #111726;
+  --surface-2: #1a2236;
+  --border: #26304a;
+  --text: #f0f3f9;
+  --text-muted: #8a94a6;
+  --accent: #5b9cff;
+  --accent-soft: rgba(91, 156, 255, 0.1);
+  --grid-line: rgba(255, 255, 255, 0.035);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Sélection de texte accentuée */
+::selection {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+/* Scrollbar discrète */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-subtle);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8;
+  }
+
+  /* Étiquette « eyebrow » en mono — la signature typographique du site */
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.2em];
+    color: var(--accent);
+  }
+
+  .surface-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+  }
+
+  .text-muted {
+    color: var(--text-muted);
+  }
+
+  .accent {
+    color: var(--accent);
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200;
+  }
+  .btn-primary {
+    background-color: var(--accent);
+    color: #ffffff;
+  }
+  .btn-primary:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    border: 1px solid var(--border);
+    color: var(--text);
+    background-color: transparent;
+  }
+  .btn-ghost:hover {
+    background-color: var(--surface-2);
+    transform: translateY(-1px);
+  }
+
+  .tag {
+    @apply inline-flex items-center rounded-md px-2.5 py-1 font-mono text-[0.7rem];
+    background-color: var(--accent-soft);
+    color: var(--accent);
+  }
+}
+
+/* Fond de grille ambiant (motif discret, non animé) */
+.grid-backdrop {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Halo accent derrière le hero */
+.hero-glow::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 55%;
+  height: 70%;
+  background: radial-gradient(
+    circle,
+    var(--accent-soft) 0%,
+    transparent 68%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Respect de prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0E1A"/>
+      <stop offset="1" stop-color="#070B16"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="1050" cy="120" r="220" fill="#2A5FE0" fill-opacity="0.14"/>
+  <rect x="80" y="90" width="52" height="52" rx="12" fill="#2A5FE0"/>
+  <text x="106" y="127" font-family="Manrope, sans-serif" font-size="26" font-weight="800" fill="#ffffff" text-anchor="middle">WR</text>
+  <text x="150" y="128" font-family="monospace" font-size="22" fill="#5B9CFF" letter-spacing="3">HANOI · VIETNAM</text>
+  <text x="80" y="300" font-family="Manrope, sans-serif" font-size="82" font-weight="800" fill="#F0F3F9">Wenchel Ridoré</text>
+  <text x="80" y="370" font-family="Manrope, sans-serif" font-size="40" font-weight="600" fill="#5B9CFF">Ingénieur &amp; chercheur en IA</text>
+  <text x="80" y="420" font-family="Inter, sans-serif" font-size="28" fill="#8A94A6">Vision par ordinateur · Machine Learning · Deep Learning</text>
+  <g font-family="monospace" font-size="24" fill="#8A94A6">
+    <text x="80" y="530">BLEU-4 0.0695</text>
+    <text x="360" y="530">AUC 0.925</text>
+    <text x="580" y="530">F1 93.7%</text>
+    <text x="800" y="530">mAP 95.6%</text>
+  </g>
+</svg>
