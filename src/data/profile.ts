@@ -15,7 +15,7 @@ export const profile = {
     "Étudiant en Master Systèmes Intelligents et Multimédia (double diplôme VNU Hanoï / Université de La Rochelle), je me spécialise en vision par ordinateur, apprentissage profond et modèles génératifs. J'ai construit des systèmes de bout en bout — détection de maladies agricoles, diagnostic médical assisté, OCR de documents administratifs — avec un souci constant du résultat mesurable et de l'impact réel. Mon objectif : poursuivre en thèse de recherche.",
 
   // Chemin vers le CV téléchargeable (placé dans /public/cv).
-  cvPath: "/cv/CV_Wenchel_RIDORE.pdf",
+  cvPath: "",
 
   contact: {
     email: "rwenchella@gmail.com",
